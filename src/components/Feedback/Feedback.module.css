@@ -1,0 +1,15 @@
+.divResult{
+  margin-top: 25px;
+/* border: 1px solid #000; */
+box-sizing: border-box;
+padding: 5px;
+width: 200px;
+text-align: left;
+}
+
+.resultParagraph{
+  font-family: 'Roboto',
+      sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+}

@@ -1,0 +1,21 @@
+
+.optDiv {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.button{
+  border-color: black;
+  font-family: 'Roboto',
+      sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    background-color: beige;
+    cursor: pointer;
+}
+
+.button:hover,
+.button:active{
+  background-color: aqua;
+}
