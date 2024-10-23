@@ -1,21 +1,15 @@
 
-
 import css from './Options.module.css'
+import Button from '../Button/Button';
 
-export default function Options(func) {
-  // function handleClick(event) {
-  //   // alert("I'm a button!")
-  //   console.log(event)
-  // }
+export default function Options({ totalFeedback, updateFeedback, reset, }) {
   return (
-    <>
-      <div className={css.optDiv}>
-        <button className={css.button} onClick={func}>Good</button>
-        <button className={css.button}>Neutral</button>
-        <button className={css.button}>Bad</button>
-        <button className={css.button}>Reset</button>
-      </div>
-    </>
+      <ul className={css.optUl} >
+      <li><Button name='good' onClick={updateFeedback}>Good</Button></li>
+      <li><Button name='neutral' onClick={updateFeedback}>Neutral</Button></li>
+      <li><Button name='bad' onClick={updateFeedback}>Bad</Button></li>
+      {totalFeedback > 0 && <li onClick={reset}><Button>Reset</Button></li>}
+        </ul>
   );
 };
 

@@ -1,0 +1,15 @@
+
+.button{
+  border-color: black;
+  font-family: 'Roboto',
+      sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    background-color: beige;
+    cursor: pointer;
+}
+
+.button:hover,
+.button:active{
+  background-color: aqua;
+}
