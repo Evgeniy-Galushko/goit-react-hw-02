@@ -5,6 +5,7 @@ import Options from './Options/Options'
 import Feedback from './Feedback/Feedback'
 import Notification from './Notification/Notification';
 
+
 import './App.css'
 
 export default function App() {
@@ -52,11 +53,20 @@ export default function App() {
   }
   
   useState ( () => {
-    const savedClicks = window . localStorage . getItem ( "feedback-data" );
-    if (savedClicks !== null ) {
-      return  JSON.parse(savedClicks);
+    const savedData = window.localStorage.getItem("feedback-data");
+    if (savedData !== null) {
+      const data = JSON.parse(savedData)
+      return setClicks({
+        good: data.clicks.good,
+      neutral: data.clicks.neutral,
+      bad: data.clicks.bad,
+    })
     }
-    return  0 ;
+    return setClicks({
+      good: 0,
+      neutral: 0,
+      bad : 0,
+    })
   });
 
   return (
