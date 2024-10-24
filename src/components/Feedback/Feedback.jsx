@@ -17,7 +17,7 @@ export default function Feedback({ good, neutral, bad, totalFeedback}) {
 
   function icons() {
   if (positive <= 33) {
-    return <ImCrying size={20}/>
+    return <ImCrying  className={css.icon} size={20}/>
   } else if (positive <= 66) {
     return <ImNeutral size={20}/> 
   }else if (positive >= 67) {

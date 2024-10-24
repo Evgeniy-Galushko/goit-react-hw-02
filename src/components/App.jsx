@@ -16,6 +16,23 @@ export default function App() {
     bad: 0,
   })
 
+useState ( () => {
+    const savedData = window.localStorage.getItem("feedback-data");
+    if (savedData !== null) {
+      const data = JSON.parse(savedData)
+      return setClicks({
+        good: data.clicks.good,
+      neutral: data.clicks.neutral,
+      bad: data.clicks.bad,
+    })
+    }
+    return setClicks({
+      good: 0,
+      neutral: 0,
+      bad : 0,
+    })
+  });
+
   const { good, neutral, bad,} = clicks
 
   const totalFeedback = good + neutral + bad
@@ -52,22 +69,6 @@ export default function App() {
     })
   }
   
-  useState ( () => {
-    const savedData = window.localStorage.getItem("feedback-data");
-    if (savedData !== null) {
-      const data = JSON.parse(savedData)
-      return setClicks({
-        good: data.clicks.good,
-      neutral: data.clicks.neutral,
-      bad: data.clicks.bad,
-    })
-    }
-    return setClicks({
-      good: 0,
-      neutral: 0,
-      bad : 0,
-    })
-  });
 
   return (
     <>
